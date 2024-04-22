@@ -1,28 +1,37 @@
 package ibm.entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity(name = "DucatStudent")
+@Entity
 //@Table(name="ducatStud")
 public class Student {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name = "d_name")
+//	@Column(name = "d_name")
 	private String name;
-	@Column(name = "d_gender")
-	private String Gender;
-	@Column(name = "d_add")
+//	@Column(name = "d_gender")
+	private String gender;
+//	@Column(name = "d_add")
 	private String address;
 
-	public Student(int id, String name, String gender, String address) {
+	public Student(int id,String name, String gender, String address) {
 		super();
-		this.id = id;
-		this.name = name;
-		Gender = gender;
+		this.id=id;
+		this.name= name;
+		this.gender = gender;
 		this.address = address;
 	}
+	
+	
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 
 	public int getId() {
 		return id;
@@ -41,11 +50,11 @@ public class Student {
 	}
 
 	public String getGender() {
-		return Gender;
+		return gender;
 	}
 
 	public void setGender(String gender) {
-		Gender = gender;
+		this.gender = gender;
 	}
 
 	public String getAddress() {
@@ -58,7 +67,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", Gender=" + Gender + ", address=" + address + "]";
+		return "Student [id=" + id + ", name=" + name + ", Gender=" + gender + ", address=" + address + "]";
 	}
 
 }

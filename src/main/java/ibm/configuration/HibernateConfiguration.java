@@ -21,8 +21,8 @@ public class HibernateConfiguration {
 		prop.put(Environment.HBM2DDL_AUTO, "create");
 		StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().applySettings(prop).build();
 		MetadataSources meta = new MetadataSources(ssr);
-		meta.addAnnotatedClassName("ibm.entity.Student");
-		SessionFactory sf = meta.buildMetadata().buildSessionFactory();
-		return sf;
+		meta.addAnnotatedClassName("ibm.entity.Employee");
+		meta.addAnnotatedClassName("ibm.entity.Address");
+		return meta.buildMetadata().buildSessionFactory();
 	}
 }
