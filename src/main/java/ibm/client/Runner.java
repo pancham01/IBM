@@ -17,9 +17,9 @@ public class Runner {
 		Session session = sf.openSession();
 		Transaction tx = session.beginTransaction();
 		Employee e = new Employee();
-		e.setFirstName("Vikas");
+		e.setFirstName("Abhi");
 		e.setLastName("Kumar");
-		Address add = new Address("lodhi marg", "Delhi");
+		Address add = new Address("marg", "Delhi");
 		e.setAddress(add);
 		add.setEmployee(e);
 		session.persist(add);
